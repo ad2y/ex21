@@ -5,7 +5,7 @@ import numpy as np
 x = np.arange(0, 100, 0.5)
 
 # y軸:sin波
-Hz = 15.
+Hz = 17.
 y = np.sin(2.0 * np.pi * (x * Hz) / 100)
 
 # グラフを描画
