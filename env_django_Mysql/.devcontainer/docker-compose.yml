@@ -4,7 +4,7 @@ services:
   db:
     image: django/mysql:1.0
     build: ./db
-    container_name: 'django_mydb'
+    container_name: 'django_db_my'
     expose: 
       - "3306"
     environment:
@@ -19,7 +19,7 @@ services:
   web:
     image: django/web:1.0
     build: ./web
-    container_name: 'django_web'
+    container_name: 'django_web_my'
     ports:
       - 8000:8000
     environment:
