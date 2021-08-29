@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 # パッケージのインストール
 RUN apt-get update && apt-get install -y \
-    tzdata \
+    tzdata gcc libmariadb-dev \
  && rm -rf /var/lib/apt/lists/*
 
 # モジュールのインストール
