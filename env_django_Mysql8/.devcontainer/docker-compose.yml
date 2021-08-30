@@ -4,7 +4,7 @@ services:
   db:
     image: django/mysql:1.0
     build: ./db
-    container_name: 'django_db_my'
+    container_name: 'django_db_my8'
     ports: 
       - 3306:3306
     environment:
@@ -19,7 +19,7 @@ services:
   web:
     image: django/web:1.0
     build: ./web
-    container_name: 'django_web_my'
+    container_name: 'django_web_my8'
     ports:
       - 8000:8000
     environment:
