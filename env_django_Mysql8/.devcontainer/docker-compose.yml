@@ -2,7 +2,7 @@ version: '3.2'
     
 services:
   db:
-    image: django/mysql:1.0
+    image: django/mysql:1.8
     build: ./db
     container_name: 'django_db_my8'
     ports: 
@@ -17,7 +17,7 @@ services:
       - ../db/database:/var/lib/mysql
       - ../db/init:/docker-entrypoint-initdb.d  
   web:
-    image: django/web:1.0
+    image: django/web:1.8
     build: ./web
     container_name: 'django_web_my8'
     ports:
