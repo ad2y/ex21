@@ -1,0 +1,33 @@
+version: '3.2'
+    
+services:
+  db:
+    image: django/mysql:1.8b
+    build: ./db
+    container_name: 'django_db_my8_b'
+    ports: 
+      - 3306:3306
+    environment:
+      - TZ=Asia/Tokyo
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=kintai_db
+      - MYSQL_USER=my
+      - MYSQL_PASSWORD=my
+    volumes:
+      - ../db/database:/var/lib/mysql
+      - ../db/init:/docker-entrypoint-initdb.d  
+  web:
+    image: django/web:1.8b
+    build: ./web
+    container_name: 'django_web_my8_b'
+    ports:
+      - 8000:8000
+    environment:
+      - DEBUG=1
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../web:/home/user1/dev
+ 
