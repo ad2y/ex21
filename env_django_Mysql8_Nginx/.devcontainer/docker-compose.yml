@@ -32,7 +32,9 @@ services:
     volumes:
       - ../app:/home/user1/dev
       - ../app/log:/app/log
-    command: uwsgi --socket :8001 --module config.wsgi --logto /app/log/uwsgi.log
+    working_dir:
+      /home/user1/dev      
+    command: uwsgi --socket :8001 --module myprj.wsgi --py-autoreload 1 --logto /app/log/uwsgi.log
   web:
     image: nginx:1.19
     container_name: 'django_web_my8_b'
@@ -44,3 +46,5 @@ services:
       - ./web/default.conf:/etc/nginx/conf.d/default.conf
       - ../web/log:/var/log/nginx
       - ../app:/home/user1/dev
+    working_dir:
+      /home/user1/dev
