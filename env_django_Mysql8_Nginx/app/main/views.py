@@ -6,4 +6,4 @@ import datetime
 
 def index(request):
   now = datetime.datetime.now()
-  return HttpResponse(f'こんにちは！ただいまの日時は {now} です！( ˘ω˘)ｽﾔｧ')
+  return HttpResponse(f'こんにちは！ただいまの日時は {now} です！( ˘ω˘)ｽﾔｧ(*´▽｀*)')

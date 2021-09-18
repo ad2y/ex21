@@ -18,6 +18,22 @@
       "request": "launch",
       "program": "${file}",
       "console": "internalConsole"
-    }
+    },
+    {
+      "name": "Python: Nginx",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "0.0.0.0",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/censr",
+          "remoteRoot": "."
+        }
+      ],
+      "django": true
+    },
   ]
 }
