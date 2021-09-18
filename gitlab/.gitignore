@@ -1,0 +1,6 @@
+/logs
+/data
+/config/ssh_*
+/config/gitlab-secrets*
+/config/trusted-certs
+
