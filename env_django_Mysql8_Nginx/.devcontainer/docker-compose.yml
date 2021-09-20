@@ -23,6 +23,8 @@ services:
     container_name: 'django_app_my8_b'
     expose:
       - "8001"
+    ports:
+      - 3000:3000
     environment:
       - DEBUG=1
     depends_on:

@@ -24,13 +24,13 @@
       "type": "python",
       "request": "attach",
       "connect": {
-        "host": "0.0.0.0",
-        "port": 5678
+        "host": "127.0.0.1",
+        "port": 3000
       },
       "pathMappings": [
         {
-          "localRoot": "${workspaceFolder}/censr",
-          "remoteRoot": "."
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/home/user1/dev"
         }
       ],
       "django": true
