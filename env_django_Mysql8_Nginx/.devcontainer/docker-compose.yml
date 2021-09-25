@@ -34,6 +34,7 @@ services:
     volumes:
       - ../app:/home/user1/dev
       - ../app/log:/app/log
+      - ../app/static:/home/user1/dev/static
     working_dir:
       /home/user1/dev      
     command: uwsgi --socket :8001 --module myprj.wsgi --py-autoreload 1 --logto /app/log/uwsgi.log
@@ -48,3 +49,4 @@ services:
       - ./web/default.conf:/etc/nginx/conf.d/default.conf
       - ../web/log:/var/log/nginx
       - ../app:/home/user1/dev
+      - ../app/static:/static
